@@ -1,6 +1,6 @@
 // src/assets/components/AdminDashboard/DashboardOverview.jsx
 import React from 'react';
-import './DashboardOverview.css'; // Import overview-specific styles
+import './Design/DashboardOverview.css'; // Import overview-specific styles
 
 const DashboardOverview = ({ data }) => {
   return (

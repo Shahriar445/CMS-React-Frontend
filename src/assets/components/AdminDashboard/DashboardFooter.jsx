@@ -1,6 +1,6 @@
 // src/assets/components/AdminDashboard/DashboardFooter.jsx
 import React from 'react';
-import './DashboardFooter.css'; // Import footer-specific styles
+import './Design/DashboardFooter.css'; // Import footer-specific styles
 
 const DashboardFooter = () => {
   return (

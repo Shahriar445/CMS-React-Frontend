@@ -1,7 +1,7 @@
 // DashboardHeader.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './DashboardHeader.css'; // Import header-specific styles
+import './Design/DashboardHeader.css'; // Import header-specific styles
 
 const DashboardHeader = () => {
   return (

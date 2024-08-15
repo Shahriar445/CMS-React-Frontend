@@ -1,9 +1,9 @@
 // AdminDashboard.jsx
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import DashboardHeader from './DashboardHeader';
-import DashboardOverview from './DashboardOverview';
-import DashboardFooter from './DashboardFooter';
+import DashboardHeader from './Design/DashboardHeader';
+import DashboardOverview from './Design/DashboardOverview';
+import DashboardFooter from './Design/DashboardFooter';
 import ManageUsers from './ManageUsers/ManageUsers';
 import { fetchUserCounts } from '../../services/adminService';
 import '../../css/AdminDashboard.css';
