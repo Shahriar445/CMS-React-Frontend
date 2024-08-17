@@ -23,7 +23,7 @@ const Sidebar = () => {
               <Link to="/manage-users">Manage Users</Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<MonitorOutlined />}>
-              <Link to="/admin-monitor">Monitor</Link>
+              <Link to="/admin-monitor">Reports</Link>
             </Menu.Item>
           </>
         
