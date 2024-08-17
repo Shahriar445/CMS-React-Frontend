@@ -1,13 +1,11 @@
 // AdminDashboard.jsx
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import DashboardHeader from './Design/DashboardHeader';
-import DashboardOverview from './Design/DashboardOverview';
-import DashboardFooter from './Design/DashboardFooter';
-import ManageUsers from './ManageUsers/ManageUsers';
+
+
 import { fetchUserCounts } from '../../services/adminService';
 import '../../css/AdminDashboard.css';
-import AdminDashboardPage from '../../pages/AdminDashboardPage';
+
 const AdminDashboard = () => {
   const [data, setData] = useState({
     totalExporters: 0,
@@ -47,15 +45,11 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-dashboard">
-      <DashboardHeader />
+    
       <main>
-        <Routes>
-          <Route path="manage-users" element={<ManageUsers />} />
-          {/* Add more routes if necessary */}
-        </Routes>
-        <DashboardOverview data={data} />
+      <h1>admin content</h1>
       </main>
-      <DashboardFooter />
+      
     </div>
   );
 };

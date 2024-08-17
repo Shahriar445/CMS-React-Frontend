@@ -1,0 +1,17 @@
+/* Sidebar.css */
+.logo {
+    height: 32px;
+    margin: 16px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .site-layout .site-layout-background {
+    background: #fff;
+  }
+  
+  .ant-layout-sider-collapsed .logo h2 {
+    display: none;
+  }
+  
