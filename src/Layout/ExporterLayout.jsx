@@ -1,28 +1,27 @@
 import React from "react";
-import SidebarImporter from "../assets/components/Sidebar/SidebarImporter";
 import HeaderComponent from "../assets/components/Header";
 import FooterComponent from "../assets/components/Footer";
+import SidebarExporter from "../assets/components/Sidebar/SidebarExporter";
 
-const ImporterLayout = ({ children }) => {
+const ExporterLayout = ({ children }) => {
   return (
     <div>
       <HeaderComponent />
       <div style={{ display: "flex" }}>
-        <SidebarImporter />
+        <SidebarExporter />
         <main
           style={{
-            marginLeft: "10px",
+            marginLeft: "100px",
             padding: "20px",
-            background: "#dbd3f3",
+            background: "red",
           }}
         >
           {children}
         </main>
       </div>
-
       <FooterComponent />
     </div>
   );
 };
 
-export default ImporterLayout;
+export default ExporterLayout;

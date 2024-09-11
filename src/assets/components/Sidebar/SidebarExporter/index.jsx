@@ -1,16 +1,16 @@
 import React from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
-const SidebarComponent = () => {
+const SidebarExporter = () => {
   return (
     <Sidebar>
       <Menu>
         <MenuItem component={<Link to="/" />}>Dashboard</MenuItem>
-        <MenuItem component={<Link to="/importer/declaration" />}>
+        <MenuItem component={<Link to="/exporter/declaration" />}>
           Declaration
         </MenuItem>
-        <MenuItem component={<Link to="/importer/payment" />}>Payment</MenuItem>
-        <MenuItem component={<Link to="/importer/monitoring" />}>
+        <MenuItem component={<Link to="/exporter/payment" />}>Payment</MenuItem>
+        <MenuItem component={<Link to="/exporter/monitoring" />}>
           Monitoring
         </MenuItem>
       </Menu>
@@ -18,4 +18,4 @@ const SidebarComponent = () => {
   );
 };
 
-export default SidebarComponent;
+export default SidebarExporter;

@@ -1,8 +1,8 @@
-const Dashboard = () => {
+const ImporterDashboard = () => {
   return (
     <>
       <h1>importer dashbaord</h1>
     </>
   );
 };
-export default Dashboard;
+export default ImporterDashboard;

@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ImporterLayout from "../Layout/ImporterLayout";
-import Dashboard from "../assets/pages/Importer/Dashboard";
-import Declaration from "../assets/pages/Importer/Declarations";
-import Payment from "../assets/pages/Importer/Payment.s";
-import Monitoring from "../assets/pages/Importer/Monitoring";
+import ImporterDashboard from "../assets/pages/Importer/ImporterDashboard";
+import ImporterDeclaration from "../assets/pages/Importer/ImporterDeclarations";
+import ImporterPayment from "../assets/pages/Importer/ImporterPayment.s";
+import ImporterMonitoring from "../assets/pages/Importer/ImporterMonitoring";
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <ImporterLayout>
-        <Dashboard />
+        <ImporterDashboard />
       </ImporterLayout>
     ),
   },
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: "/importer/declaration",
     element: (
       <ImporterLayout>
-        <Declaration />
+        <ImporterDeclaration />
       </ImporterLayout>
     ),
   },
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     path: "/importer/payment",
     element: (
       <ImporterLayout>
-        <Payment />
+        <ImporterPayment />
       </ImporterLayout>
     ),
   },
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     path: "/importer/monitoring",
     element: (
       <ImporterLayout>
-        <Monitoring />
+        <ImporterMonitoring />
       </ImporterLayout>
     ),
   },
