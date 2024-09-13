@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-const Login=()=> {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [role, setRole] = useState('admin'); 
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,19 +19,44 @@ const Login=()=> {
         body: JSON.stringify({
             userName: username, 
             password: password, 
-            role: role  }),
+            role: role
+        }),
       });
 
       const data = await response.json();
+    
       if (response.ok) {
-        setMessage('Login successful');
-        // handle successful login
+        // Store token and other user details in localStorage
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('userId', data.userId);
+        localStorage.setItem('userName', data.userName);
+        localStorage.setItem('role', data.role);
+
+        // Redirect based on user role
+        switch (data.role.toLowerCase()) {
+          case 'admin':
+            navigate('/admin/dashboard');
+            break;
+          case 'importer':
+            navigate('/importer/dashboard');
+            break;
+          case 'exporter':
+            navigate('/exporter/dashboard');
+            break;
+          case 'customs officer':
+            navigate('/customs-officer/dashboard');
+            break;
+          default:
+            setMessage('Unknown role');
+            break;
+        }
       } else {
-        setMessage(data.message || 'Login failed');
+        // Handle login error
+        setMessage(data.message || 'Invalid credentials');
       }
     } catch (error) {
       console.error('Error:', error);
-      setMessage('An error occurred');
+      setMessage('An error occurred during login');
     }
   };
 
