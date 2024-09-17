@@ -5,7 +5,9 @@ const SidebarExporter = () => {
   return (
     <Sidebar>
       <Menu>
-        <MenuItem component={<Link to="/" />}>Dashboard</MenuItem>
+        <MenuItem component={<Link to="/exporter/dashboard" />}>
+          Dashboard
+        </MenuItem>
         <MenuItem component={<Link to="/exporter/declaration" />}>
           Declaration
         </MenuItem>

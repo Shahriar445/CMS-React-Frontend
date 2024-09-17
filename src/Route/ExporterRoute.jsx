@@ -6,7 +6,7 @@ import ExporterPayment from "../assets/pages/Exporter/ExporterPayment.s";
 import ExporterMonitoring from "../assets/pages/Exporter/ExporterMonitoring";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/exporter",
     element: (
       <ExporterLayout>
         <ExporterDashboard />

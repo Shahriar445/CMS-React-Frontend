@@ -7,7 +7,7 @@ const SidebarImporter = () => {
     <Sidebar>
       <Menu>
         <MenuItem>
-          <Link to="/">Dashboard</Link>
+          <Link to="/importer/dashboard">Dashboard</Link>
         </MenuItem>
         <MenuItem>
           <Link to="/importer/declaration">Declaration</Link>
