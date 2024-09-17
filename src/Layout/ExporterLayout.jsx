@@ -11,9 +11,9 @@ const ExporterLayout = ({ children }) => {
         <SidebarExporter />
         <main
           style={{
-            marginLeft: "100px",
+            marginLeft: "2px",
             padding: "20px",
-            background: "red",
+            background: "green",
           }}
         >
           {children}

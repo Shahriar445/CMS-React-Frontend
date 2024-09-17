@@ -1,28 +1,18 @@
 import HeaderComponent from "../assets/components/Header";
 import FooterComponent from "../assets/components/Footer";
-import Login from "../assets/components/LoginRegistration/login";
-import Register from "../assets/components/LoginRegistration/Register";
 
-import { useState } from "react";
+import LoginPage from "../assets/pages/LoginRegisterPage";
 
-function HomeLayout  () {
-    const [isLogin, setIsLogin] = useState(true);
-
+function HomeLayout() {
   return (
     <div>
       <HeaderComponent />
-      <div>
-      <h1>Authentication System</h1>
-      {isLogin ? <Login /> : <Register />}
-      <button onClick={() => setIsLogin(!isLogin)}>
-        {isLogin ? 'Go to Register' : 'Go to Login'}
-      </button>
-    </div>
-       
+
+      <LoginPage />
 
       <FooterComponent />
     </div>
   );
-};
+}
 
 export default HomeLayout;

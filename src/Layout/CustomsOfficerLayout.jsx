@@ -1,28 +1,28 @@
 import React from "react";
-import SidebarImporter from "../assets/components/Sidebar/SidebarImporter";
 import HeaderComponent from "../assets/components/Header";
 import FooterComponent from "../assets/components/Footer";
-import "../assets/style/customizeCss.css";
-const ImporterLayout = ({ children }) => {
+import SidebarExporter from "../assets/components/Sidebar/SidebarExporter";
+import SidebarCustomsOfficer from "../assets/components/Sidebar/SidebarCustomsOfficer";
+
+const CustomsOfficerLayout = ({ children }) => {
   return (
     <div>
       <HeaderComponent />
       <div style={{ display: "flex" }}>
-        <SidebarImporter />
+        <SidebarCustomsOfficer />
         <main
           style={{
             marginLeft: "2px",
             padding: "20px",
-            background: "#dbd3f3",
+            background: "red",
           }}
         >
           {children}
         </main>
       </div>
-
       <FooterComponent />
     </div>
   );
 };
 
-export default ImporterLayout;
+export default CustomsOfficerLayout;

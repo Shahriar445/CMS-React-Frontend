@@ -1,19 +1,84 @@
 import React from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
+import {
+  DashboardOutlined,
+  HistoryOutlined,
+  BarChartOutlined,
+  LockOutlined,
+} from "@ant-design/icons";
+
+const iconStyle = { fontSize: "24px", color: "#ffffff" }; // Set the desired color and size
+
 const SidebarCustomsOfficer = () => {
   return (
-    <Sidebar>
-      <Menu>
-        <MenuItem component={<Link to="/" />}>Dashboard</MenuItem>
-        <MenuItem component={<Link to="/custome_officer/declaration" />}>
-          Declaration Check
+    <Sidebar
+      style={{
+        backgroundColor: "#001529", // Set background color
+        color: "#ffffff", // Set text color
+        width: "250px",
+        minHeight: "calc(100vh - 120px)",
+        position: "relative",
+        top: "0",
+        left: "0",
+        bottom: "0",
+      }}
+    >
+      <Menu
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "30px",
+          marginLeft: "5px",
+        }}
+      >
+        <MenuItem
+          style={{
+            fontSize: "30px",
+            color: "#ffff",
+            marginBottom: "10px",
+          }}
+          component={<Link to="/customs_officer/dashboard" />}
+          icon={<DashboardOutlined style={{ color: "#4CAF50" }} />}
+        >
+          Dashboard
         </MenuItem>
-        <MenuItem component={<Link to="/custome_officer/payment" />}>
-          Payment History
+
+        <MenuItem
+          style={{
+            fontSize: "30px",
+            color: "#ffff",
+            marginBottom: "10px",
+          }}
+          component={<Link to="/customs_officer/payment" />}
+          icon={<HistoryOutlined style={{ color: "#c600f7" }} />}
+        >
+          Payment Details
         </MenuItem>
-        <MenuItem component={<Link to="/custome_officer/monitoring" />}>
-          Monitoring
+
+        <MenuItem
+          style={{
+            fontSize: "30px",
+            color: "#ffff",
+            marginBottom: "10px",
+          }}
+          component={<Link to="/customs_officer/report" />}
+          icon={<BarChartOutlined style={{ color: "#ef634d" }} />}
+        >
+          Monitor
+        </MenuItem>
+
+        <MenuItem
+          style={{
+            fontSize: "30px",
+            color: "#ffff",
+            marginBottom: "10px",
+          }}
+          component={<Link to="/customs_officer/permission" />}
+          icon={<LockOutlined style={{ color: "Highlight" }} />}
+        >
+          Permission
         </MenuItem>
       </Menu>
     </Sidebar>

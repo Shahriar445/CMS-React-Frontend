@@ -1,14 +1,15 @@
 import React from "react";
-import SidebarImporter from "../assets/components/Sidebar/SidebarImporter";
+
+import SidebarAdmin from "../assets/components/Sidebar/SidebarAdmin";
 import HeaderComponent from "../assets/components/Header";
 import FooterComponent from "../assets/components/Footer";
 import "../assets/style/customizeCss.css";
-const ImporterLayout = ({ children }) => {
+const AdminLayout = ({ children }) => {
   return (
     <div>
       <HeaderComponent />
       <div style={{ display: "flex" }}>
-        <SidebarImporter />
+        <SidebarAdmin />
         <main
           style={{
             marginLeft: "2px",
@@ -25,4 +26,4 @@ const ImporterLayout = ({ children }) => {
   );
 };
 
-export default ImporterLayout;
+export default AdminLayout;
