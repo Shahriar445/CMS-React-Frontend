@@ -7,7 +7,7 @@ import {
   DollarOutlined,
   MonitorOutlined,
 } from "@ant-design/icons";
-
+import LogoutButton from "../../LoginRegistration/logoutButton";
 const iconStyle = { fontSize: "24px", color: "#ffffff" };
 const SidebarImporter = () => {
   return (
@@ -77,6 +77,9 @@ const SidebarImporter = () => {
         >
           Monitor
         </MenuItem>
+        <div style={{ padding: "2px", position: "absolute", bottom: "0", left: "0", width: "100%" }}>
+        <LogoutButton />
+      </div>
       </Menu>
     </Sidebar>
   );

@@ -1,32 +1,21 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Button, Card } from "antd";
-import Login from "../../components/LoginRegistration/Login";
+import Login from "../../components/LoginRegistration/login";
 import Register from "../../components/LoginRegistration/Register";
 
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        background: "#f0f2f5",
-      }}
-    >
+    <div>
       <Card
         style={{
-          width: 400,
-          padding: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           borderRadius: "8px",
         }}
       >
         <div
           style={{
-            display: "flex",
             justifyContent: "center",
             marginBottom: "20px",
             fontSize: "24px",

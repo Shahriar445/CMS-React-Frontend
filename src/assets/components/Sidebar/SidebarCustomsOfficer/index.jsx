@@ -7,8 +7,7 @@ import {
   BarChartOutlined,
   LockOutlined,
 } from "@ant-design/icons";
-
-const iconStyle = { fontSize: "24px", color: "#ffffff" }; // Set the desired color and size
+import LogoutButton from "../../LoginRegistration/logoutButton";
 
 const SidebarCustomsOfficer = () => {
   return (
@@ -80,6 +79,9 @@ const SidebarCustomsOfficer = () => {
         >
           Permission
         </MenuItem>
+        <div style={{ padding: "2px", position: "absolute", bottom: "0", left: "0", width: "100%" }}>
+        <LogoutButton />
+      </div>
       </Menu>
     </Sidebar>
   );

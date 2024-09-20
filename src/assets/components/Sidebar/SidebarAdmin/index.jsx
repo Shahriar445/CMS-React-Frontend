@@ -8,6 +8,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 
+import LogoutButton from "../../LoginRegistration/logoutButton";
 const iconStyle = { fontSize: "24px" };
 const SidebarAdmin = () => {
   return (
@@ -16,7 +17,7 @@ const SidebarAdmin = () => {
         style={{
           backgroundColor: "#001529",
           color: "black",
-          width: "250px",
+          width: "200px",
           minHeight: "calc(100vh - 120px)",
           position: "relative",
           top: "0",
@@ -38,7 +39,7 @@ const SidebarAdmin = () => {
             style={{
               color: "#ffff", // Light blue text
               marginBottom: "10px",
-              fontSize: "30px",
+              fontSize: "20px",
             }}
           >
             Dashboard
@@ -46,7 +47,7 @@ const SidebarAdmin = () => {
 
           <MenuItem
             style={{
-              fontSize: "30px",
+              fontSize: "20px",
               color: "#ffff",
               marginBottom: "10px",
             }}
@@ -57,12 +58,15 @@ const SidebarAdmin = () => {
           </MenuItem>
 
           <MenuItem
-            style={{ fontSize: "30px", color: "#ffffff" }}
+            style={{ fontSize: "20px", color: "#ffffff" }}
             icon={<UserOutlined style={{ color: "#02daa3" }} />}
             component={<Link to="/admin/usermanage" />}
           >
             User Manage
           </MenuItem>
+          <div style={{ padding: "2px", position: "absolute", bottom: "0", left: "0", width: "100%" }}>
+        <LogoutButton />
+      </div>
         </Menu>
       </Sidebar>
     </>

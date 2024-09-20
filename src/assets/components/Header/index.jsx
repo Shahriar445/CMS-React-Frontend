@@ -12,7 +12,7 @@ const HeaderComponent = () => {
           fontSize: "30px",
         }}
       >
-        this is header
+        CMS
       </Header>
     </>
   );

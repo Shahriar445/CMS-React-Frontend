@@ -11,7 +11,7 @@ const Guard = ({ children }) => {
     const role = localStorage.getItem("role");
 
     if (!token) {
-      navigate("/login");
+      navigate("/");
       return;
     }
 
@@ -26,7 +26,7 @@ const Guard = ({ children }) => {
         navigate("/exporter/dashboard");
         break;
       case "customs officer":
-        navigate("/customs-officer/dashboard");
+        navigate("/customs_officer/dashboard");
         break;
       default:
         setAuthorized(false);

@@ -49,117 +49,145 @@ const router = createBrowserRouter([
   {
     path: "/exporter/declaration",
     element: (
+      
       <ExporterLayout>
         <ExporterDeclaration />
       </ExporterLayout>
+     
     ),
   },
   {
     path: "/exporter/payment",
     element: (
+  
       <ExporterLayout>
         <ExporterPayment />
       </ExporterLayout>
+     
     ),
   },
   {
     path: "/exporter/monitoring",
     element: (
+     
       <ExporterLayout>
         <ExporterMonitoring />
       </ExporterLayout>
+      
     ),
   },
   // ------------------- Importer
   {
     path: "/importer/dashboard",
     element: (
+      <Guard>
       <ImporterLayout>
         <ImporterDashboard />
       </ImporterLayout>
+      </Guard>
     ),
   },
   {
     path: "/importer/declaration",
     element: (
+   
       <ImporterLayout>
         <ImporterDeclaration />
       </ImporterLayout>
+  
     ),
   },
   {
     path: "/importer/payment",
     element: (
+   
       <ImporterLayout>
         <ImporterPayment />
       </ImporterLayout>
+     
     ),
   },
   {
     path: "/importer/monitoring",
     element: (
+      
       <ImporterLayout>
         <ImporterMonitoring />
       </ImporterLayout>
+    
     ),
   },
   // ------------------- Admin
   {
     path: "/admin/dashboard",
     element: (
+      <Guard>
       <AdminLayout>
         <AdminDashboard />
       </AdminLayout>
+      </Guard>
     ),
   },
   {
     path: "/admin/monitor",
     element: (
+      
       <AdminLayout>
         <AdminMonitor />
       </AdminLayout>
+  
     ),
   },
 
   {
     path: "/admin/usermanage",
     element: (
+    
       <AdminLayout>
         <AdminUserManage />
       </AdminLayout>
+      
     ),
   },
   //------------------ customs officer
   {
     path: "/customs_officer/dashboard",
     element: (
-      <CustomsOfficerLayout>
-        <CustomsOfficerDashboard />
+  
+      <CustomsOfficerLayout>    <Guard>
+        <CustomsOfficerDashboard />  </Guard>
       </CustomsOfficerLayout>
+    
     ),
   },
   {
     path: "/customs_officer/payment",
     element: (
+     
       <CustomsOfficerLayout>
         <CustomsOfficerPayment />
       </CustomsOfficerLayout>
+     
     ),
   },
   {
     path: "/customs_officer/report",
     element: (
+      
       <CustomsOfficerLayout>
         <CustomsOfficerReport />
       </CustomsOfficerLayout>
+      
     ),
   },
   {
     path: "/customs_officer/permission",
     element: (
+      
       <CustomsOfficerLayout>
         <CustomsOfficerUserPermission />
       </CustomsOfficerLayout>
+    
     ),
   },
 ]);
