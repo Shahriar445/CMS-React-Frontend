@@ -1,5 +1,6 @@
 import React from "react";
-import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import Sider from "antd/es/layout/Sider";
+import { Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import {
   DashboardOutlined,
@@ -8,17 +9,19 @@ import {
   MonitorOutlined,
 } from "@ant-design/icons";
 import LogoutButton from "../../LoginRegistration/logoutButton";
-const iconStyle = { fontSize: "24px", color: "#ffffff" };
+
+const iconStyle = { fontSize: "24px" };
+
 const SidebarImporter = () => {
   return (
-    <Sidebar
+    <Sider
       style={{
-        backgroundColor: "#001529",
-        color: "black",
+        width: "200px",
         minHeight: "calc(100vh - 120px)",
         position: "relative",
         top: "0",
         bottom: "0",
+        backgroundColor: "#fff", // Dark sidebar color
       }}
     >
       <Menu
@@ -31,57 +34,92 @@ const SidebarImporter = () => {
         }}
       >
         <MenuItem
-          style={{
-            fontSize: "30px",
-            color: "#ffff",
-            marginBottom: "10px",
-          }}
+          icon={
+            <DashboardOutlined style={{ ...iconStyle, color: "#4CAF50" }} />
+          }
           component={<Link to="/importer/dashboard" />}
-          icon={<DashboardOutlined style={{ iconStyle, color: "#4CAF50" }} />}
+          style={{
+            color: "black",
+            marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0", // Add border
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
+            transition: "all 0.3s ease", // Smooth transition on hover
+          }}
         >
           Dashboard
         </MenuItem>
 
         <MenuItem
-          style={{
-            fontSize: "30px",
-            color: "#ffff",
-            marginBottom: "10px",
-          }}
+          icon={
+            <FileTextOutlined style={{ ...iconStyle, color: "#00CCFF" }} />
+          }
           component={<Link to="/importer/declaration" />}
-          icon={<FileTextOutlined style={{ iconStyle, color: "#ccgfff" }} />}
+          style={{
+            color: "black",
+            marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0", // Add border
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
+            transition: "all 0.3s ease", // Smooth transition on hover
+          }}
         >
           Declaration
         </MenuItem>
 
         <MenuItem
-          style={{
-            fontSize: "30px",
-            color: "#ffff",
-            marginBottom: "10px",
-          }}
+          icon={<DollarOutlined style={{ ...iconStyle, color: "#3C3CEC" }} />}
           component={<Link to="/importer/payment" />}
-          icon={<DollarOutlined style={{ iconStyle, color: "#3c3cec" }} />}
+          style={{
+            color: "black",
+            marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0", // Add border
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
+            transition: "all 0.3s ease", // Smooth transition on hover
+          }}
         >
           Payment
         </MenuItem>
 
         <MenuItem
-          style={{
-            fontSize: "30px",
-            color: "#ffff",
-            marginBottom: "10px",
-          }}
+          icon={
+            <MonitorOutlined style={{ ...iconStyle, color: "#EF634D" }} />
+          }
           component={<Link to="/importer/monitoring" />}
-          icon={<MonitorOutlined style={{ iconStyle, color: "#ef634d" }} />}
+          style={{
+            color: "black",
+            marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0", // Add border
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
+            transition: "all 0.3s ease", // Smooth transition on hover
+          }}
         >
           Monitor
         </MenuItem>
-        <div style={{ padding: "2px", position: "absolute", bottom: "0", left: "0", width: "100%" }}>
-        <LogoutButton />
-      </div>
+
+        <div
+          style={{
+            padding: "2px",
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            width: "100%",
+          }}
+        >
+          <LogoutButton />
+        </div>
       </Menu>
-    </Sidebar>
+    </Sider>
   );
 };
 

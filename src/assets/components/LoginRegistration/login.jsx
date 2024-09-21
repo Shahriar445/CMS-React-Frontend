@@ -45,7 +45,7 @@ const Login = () => {
             navigate("/exporter/dashboard");
             break;
           case "customs officer":
-            navigate("/customs-officer/dashboard");
+            navigate("/officer/dashboard");
             break;
           default:
             AntMessage.error("Unknown role");

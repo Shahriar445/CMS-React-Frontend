@@ -20,7 +20,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <Button type="primary" danger
+    <Button style={{marginBottom:'30px'}} type="primary" danger
       
       icon={<LogoutOutlined style={{ fontSize: "15px"  }} />}
       onClick={handleLogout} 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import Sider from "antd/es/layout/Sider";

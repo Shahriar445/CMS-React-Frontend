@@ -26,7 +26,7 @@ const Guard = ({ children }) => {
         navigate("/exporter/dashboard");
         break;
       case "customs officer":
-        navigate("/customs_officer/dashboard");
+        navigate("/officer/dashboard");
         break;
       default:
         setAuthorized(false);

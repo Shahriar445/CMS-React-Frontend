@@ -151,17 +151,19 @@ const router = createBrowserRouter([
   },
   //------------------ customs officer
   {
-    path: "/customs_officer/dashboard",
+    path: "/officer/dashboard",
     element: (
   
-      <CustomsOfficerLayout>    <Guard>
-        <CustomsOfficerDashboard />  </Guard>
+      <CustomsOfficerLayout>
+            <Guard>
+           <CustomsOfficerDashboard /> 
+         </Guard>
       </CustomsOfficerLayout>
     
     ),
   },
   {
-    path: "/customs_officer/payment",
+    path: "/officer/payment",
     element: (
      
       <CustomsOfficerLayout>
@@ -171,7 +173,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/customs_officer/report",
+    path: "/officer/report",
     element: (
       
       <CustomsOfficerLayout>
@@ -181,7 +183,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/customs_officer/permission",
+    path: "/officer/permission",
     element: (
       
       <CustomsOfficerLayout>

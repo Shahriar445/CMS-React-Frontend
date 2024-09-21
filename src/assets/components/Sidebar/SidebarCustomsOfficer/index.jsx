@@ -1,5 +1,6 @@
 import React from "react";
-import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import Sider from "antd/es/layout/Sider";
+import { Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import {
   DashboardOutlined,
@@ -9,18 +10,18 @@ import {
 } from "@ant-design/icons";
 import LogoutButton from "../../LoginRegistration/logoutButton";
 
+const iconStyle = { fontSize: "24px" };
+
 const SidebarCustomsOfficer = () => {
   return (
-    <Sidebar
+    <Sider
       style={{
-        backgroundColor: "#001529", // Set background color
-        color: "#ffffff", // Set text color
-        width: "250px",
+        width: "200px",
         minHeight: "calc(100vh - 120px)",
         position: "relative",
         top: "0",
-        left: "0",
         bottom: "0",
+        backgroundColor: "#fff", // Optional: set background color for the sidebar
       }}
     >
       <Menu
@@ -29,61 +30,90 @@ const SidebarCustomsOfficer = () => {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "30px",
-          marginLeft: "5px",
+          gap: "20px",
         }}
       >
         <MenuItem
+          component={<Link to="/officer/dashboard" />}
+          icon={<DashboardOutlined style={{ iconStyle, color: "#4CAF50" }} />}
           style={{
-            fontSize: "30px",
-            color: "#ffff",
+            color: "black",
             marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0", // Add border
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
+            transition: "all 0.3s ease", // Smooth transition on hover
           }}
-          component={<Link to="/customs_officer/dashboard" />}
-          icon={<DashboardOutlined style={{ color: "#4CAF50" }} />}
         >
           Dashboard
         </MenuItem>
 
         <MenuItem
+          component={<Link to="/officer/payment" />}
+          icon={<HistoryOutlined style={{ iconStyle, color: "#c600f7" }} />}
           style={{
-            fontSize: "30px",
-            color: "#ffff",
+            color: "black",
             marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+            transition: "all 0.3s ease",
           }}
-          component={<Link to="/customs_officer/payment" />}
-          icon={<HistoryOutlined style={{ color: "#c600f7" }} />}
         >
           Payment Details
         </MenuItem>
 
         <MenuItem
+          component={<Link to="/officer/report" />}
+          icon={<BarChartOutlined style={{ iconStyle, color: "#ef634d" }} />}
           style={{
-            fontSize: "30px",
-            color: "#ffff",
+            color: "black",
             marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+            transition: "all 0.3s ease",
           }}
-          component={<Link to="/customs_officer/report" />}
-          icon={<BarChartOutlined style={{ color: "#ef634d" }} />}
         >
           Monitor
         </MenuItem>
 
         <MenuItem
+          component={<Link to="/officer/permission" />}
+          icon={<LockOutlined style={{ iconStyle, color: "Highlight" }} />}
           style={{
-            fontSize: "30px",
-            color: "#ffff",
+            color: "black",
             marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+            transition: "all 0.3s ease",
           }}
-          component={<Link to="/customs_officer/permission" />}
-          icon={<LockOutlined style={{ color: "Highlight" }} />}
         >
           Permission
         </MenuItem>
-        <div style={{ padding: "2px", position: "absolute", bottom: "0", left: "0", width: "100%" }}>
-        <LogoutButton />
-      </div>
+
+        <div
+          style={{
+            padding: "2px",
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            width: "100%",
+          }}
+        >
+          <LogoutButton />
+        </div>
       </Menu>
-    </Sidebar>
+    </Sider>
   );
 };
 
