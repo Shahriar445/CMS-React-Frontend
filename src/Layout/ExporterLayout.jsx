@@ -3,30 +3,30 @@ import SidebarExporter from "../assets/components/Sidebar/SidebarExporter";
 
 const ExporterLayout = ({ children }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-    
-      <HeaderComponent title={'Exporter'}/>
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      <HeaderComponent title={'Exporter'} />
 
-      <div style={{ display: "flex", flex: 1, backgroundColor: "#f0f2f5" }}>
-    
-        <SidebarExporter />
+      <div style={{ display: "flex", flex: 1 }}>
+        <div style={{ position: "fixed", width: "250px", height: "100%", top: 54, left: 0 }}>
+          <SidebarExporter />
+        </div>
 
-    
         <main
           style={{
-            flex: 1, 
+            flex: 1,
+            marginLeft: "250px",
             padding: "20px",
-            marginLeft: "10px", 
             backgroundColor: "#fff",
-            borderRadius: "8px", 
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", 
-            minHeight: "calc(100vh - 200px)",
+            borderRadius: "8px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            height: "calc(100vh - 54px)",
+            marginTop: "54px",
+            overflowY: "auto",
           }}
         >
           {children}
         </main>
       </div>
-
     </div>
   );
 };

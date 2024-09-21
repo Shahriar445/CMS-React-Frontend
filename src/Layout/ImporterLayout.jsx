@@ -1,6 +1,5 @@
 import SidebarImporter from "../assets/components/Sidebar/SidebarImporter";
 import HeaderComponent from "../assets/components/Header";
-import FooterComponent from "../assets/components/Footer";
 import "../assets/style/customizeCss.css";
 
 const ImporterLayout = ({ children }) => {
@@ -12,15 +11,20 @@ const ImporterLayout = ({ children }) => {
       {/* Sidebar and content layout */}
       <div style={{ display: "flex", flex: 1, padding: 0, marginTop: 0 }}>
         {/* Sidebar */}
-        <SidebarImporter />
+        <div style={{ position: "fixed", width: "250px", height: "100%", top: 54, left: 0 }}>
+          <SidebarImporter />
+        </div>
 
+        {/* Main content */}
         <main
           style={{
             flex: 1,
+            marginLeft: "250px", // Offset for the sidebar width
             padding: "20px",
-            background: "#dbd3f3",
-            overflowY: "auto", // Ensures scroll if content is too large
-            marginTop: 0, // Ensure no margin above main content
+            background: "#dbd3f3", // Background color specific for Importer layout
+            overflowY: "auto", // Ensures scrolling for overflow content
+            height: "calc(100vh - 54px)", // Adjust height based on header size
+            marginTop: "54px", // Offset based on header height
           }}
         >
           {children}

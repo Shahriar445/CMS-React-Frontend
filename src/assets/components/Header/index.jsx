@@ -3,8 +3,7 @@ import { Header } from "antd/es/layout/layout";
 
 const HeaderComponent = ({ title }) => {
   return (
-    <>
-    <div style={{padding:'0px'}}>
+    <div style={{ padding: '0px' }}>
       <Header
         style={{
           textAlign: "center",
@@ -16,19 +15,13 @@ const HeaderComponent = ({ title }) => {
           position: "fixed", // Fix header to the top
           width: "100%", // Make sure it spans the full width
           top: 0,
-          left:0,
-           // Fix it at the top
+          left: 0,
           zIndex: 1000, // Ensure it's above other content
         }}
       >
         {title || "CMS"} {/* Default title is CMS */}
       </Header>
-
-      {/* Adding this spacer div so that content below the header is not hidden */}
-      <div style={{ height: "54px" }}></div>
-
-      </div>
-    </>
+    </div>
   );
 };
 
