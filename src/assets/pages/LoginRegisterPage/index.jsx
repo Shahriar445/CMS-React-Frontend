@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Button, Card } from "antd";
 import Login from "../../components/LoginRegistration/login";
 import Register from "../../components/LoginRegistration/Register";
@@ -9,32 +9,44 @@ const LoginPage = () => {
   return (
     <div>
       <Card
+        headStyle={{
+          backgroundColor: "#f0f2f5",
+          textAlign: "center",
+          borderRadius: "8px",
+        }}
+        title="Customs Management System"
         style={{
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           borderRadius: "8px",
+          width: "400px",
         }}
       >
         <div
           style={{
             justifyContent: "center",
-            marginBottom: "20px",
             fontSize: "24px",
             fontWeight: "bold",
+            marginTop: "0px",
+            padding: "0px",
+            marginBottom: "5px",
           }}
         >
-          {isLogin ? "User Login" : " User Register"}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              textAlign: "center",
+            }}
+          >
+            {isLogin ? "User Login" : "User Register"}
+          </div>
         </div>
-        <div style={{ marginBottom: "20px" }}>
+        <div style={{ marginBottom: "0px" }}>
           {isLogin ? <Login /> : <Register />}
         </div>
-        <Button
-          type="primary"
-          block
-          onClick={() => setIsLogin(!isLogin)}
-          style={{
-            marginTop: "20px",
-          }}
-        >
+        <Button block onClick={() => setIsLogin(!isLogin)}>
           {isLogin ? "Go to Register" : "Go to Login"}
         </Button>
       </Card>

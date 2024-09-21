@@ -14,14 +14,12 @@ const AdminLayout = ({ children }) => {
           style={{
             marginLeft: "2px",
             padding: "20px",
-            background: "#dbd3f3",
+            background: "#f1f1f1",
           }}
         >
           {children}
         </main>
       </div>
-
-      <FooterComponent />
     </div>
   );
 };

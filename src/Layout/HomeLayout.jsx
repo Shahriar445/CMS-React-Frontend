@@ -5,12 +5,20 @@ import LoginPage from "../assets/pages/LoginRegisterPage";
 
 function HomeLayout() {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <HeaderComponent />
-
-      <LoginPage />
-
-      <FooterComponent />
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}>
+          <LoginPage />
+        </div>
+      </div>
     </div>
   );
 }

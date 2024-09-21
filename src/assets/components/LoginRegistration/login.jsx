@@ -65,30 +65,42 @@ const Login = () => {
     <div>
       <Form onFinish={handleSubmit} initialValues={{ role }}>
         <Form.Item
+          label="Username"
+          style={{ marginBottom: "8px" }}
           name="username"
           rules={[{ required: true, message: "Please input your username!" }]}
         >
           <Input
+            style={{ height: "35px" }}
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </Form.Item>
         <Form.Item
+          label="Password"
+          style={{ marginBottom: "8px" }}
           name="password"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
           <Input.Password
+            style={{ height: "35px" }}
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Item>
         <Form.Item
+          label="Role"
+          style={{ marginBottom: "8px", marginLeft: "30px" }}
           name="role"
           rules={[{ required: true, message: "Please select your role!" }]}
         >
-          <Select value={role} onChange={(value) => setRole(value)}>
+          <Select
+            style={{ height: "35px" }}
+            value={role}
+            onChange={(value) => setRole(value)}
+          >
             <Option value="admin">Admin</Option>
             <Option value="importer">Importer</Option>
             <Option value="exporter">Exporter</Option>

@@ -31,7 +31,6 @@ const Register = () => {
 
   return (
     <div>
-      <h2>Register</h2>
       <Form
         form={form}
         onFinish={handleSubmit}
@@ -39,14 +38,16 @@ const Register = () => {
         layout="vertical"
       >
         <Form.Item
+          style={{ marginBottom: "8px" }}
           name="username"
           label="Name"
           rules={[{ required: true, message: "Please input your name!" }]}
         >
-          <Input />
+          <Input style={{ height: "35px" }} />
         </Form.Item>
 
         <Form.Item
+          style={{ marginBottom: "8px" }}
           name="email"
           label="Email"
           rules={[
@@ -54,23 +55,25 @@ const Register = () => {
             { type: "email", message: "Please enter a valid email!" },
           ]}
         >
-          <Input />
+          <Input style={{ height: "35px" }} />
         </Form.Item>
 
         <Form.Item
+          style={{ marginBottom: "8px" }}
           name="password"
           label="Password"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
-          <Input.Password />
+          <Input.Password style={{ height: "35px" }} />
         </Form.Item>
 
         <Form.Item
+          style={{ marginBottom: "8px" }}
           name="role"
           label="Role"
           rules={[{ required: true, message: "Please select your role!" }]}
         >
-          <Select>
+          <Select style={{ height: "35px" }}>
             <Option value="importer">Importer</Option>
             <Option value="exporter">Exporter</Option>
             <Option value="customs officer">Customs Officer</Option>
