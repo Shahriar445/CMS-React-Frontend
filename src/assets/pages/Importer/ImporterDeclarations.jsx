@@ -1,8 +1,13 @@
-const ImporterDeclaration = () => {
+
+import React from 'react';
+import DeclarationForm from './declarations/declarationForm';
+
+const ImporterDeclarations = () => {
   return (
-    <>
-      <h1>importer declaration</h1>
-    </>
+    <div>
+      <DeclarationForm/>
+    </div>
   );
 };
-export default ImporterDeclaration;
+
+export default ImporterDeclarations;
