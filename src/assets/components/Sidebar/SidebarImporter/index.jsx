@@ -16,7 +16,7 @@ const SidebarImporter = () => {
   return (
     <Sider
       style={{
-        width: "200px",
+        width: "100px",
         minHeight: "calc(100vh - 120px)",
         position: "relative",
         top: "0",

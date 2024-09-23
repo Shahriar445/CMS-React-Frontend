@@ -14,8 +14,8 @@ const ExporterLayout = ({ children }) => {
         <main
           style={{
             flex: 1,
-            marginLeft: "250px",
-            padding: "20px",
+            marginLeft: "200px",
+            padding: "0px",
             backgroundColor: "#fff",
             borderRadius: "8px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",

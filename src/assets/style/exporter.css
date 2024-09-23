@@ -1,0 +1,47 @@
+.animated-card {
+    background: linear-gradient(135deg, #f6f9fc 25%, #e9ecef 75%);
+    background-size: 400% 400%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: background 0.3s ease;
+    /* Smooth background transition */
+}
+
+.processed-card {
+    border-left: 4px solid green;
+}
+
+.pending-card {
+    border-left: 4px solid orange;
+}
+
+.status-card {
+    border-left: 4px solid #595959;
+}
+
+.clearance-card {
+    border-left: 4px solid blue;
+}
+
+/* Hover effect to trigger the animation */
+.animated-card:hover {
+    animation: gradientHoverAnimation 3s ease infinite;
+    background-size: 200% 200%;
+    /* Increase the size of the gradient on hover */
+}
+
+/* Define keyframes for hover animation */
+@keyframes gradientHoverAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

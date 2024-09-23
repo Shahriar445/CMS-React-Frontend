@@ -7,7 +7,7 @@ import HomeLayout from "../Layout/HomeLayout";
 import ExporterDashboard from "../assets/pages/Exporter/ExporterDashboard";
 import ExporterLayout from "../Layout/ExporterLayout";
 import ExporterDeclaration from "../assets/pages/Exporter/ExporterDeclarations";
-import ExporterPayment from "../assets/pages/Exporter/ExporterPayment.s";
+import ExporterPayment from "../assets/pages/Exporter/ExporterPayment";
 import ExporterMonitoring from "../assets/pages/Exporter/ExporterMonitoring";
 import ImporterPayment from "../assets/pages/Importer/ImporterPayment.s";
 import ImporterDashboard from "../assets/pages/Importer/ImporterDashboard";

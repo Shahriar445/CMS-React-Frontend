@@ -11,7 +11,7 @@ const ImporterLayout = ({ children }) => {
       {/* Sidebar and content layout */}
       <div style={{ display: "flex", flex: 1, padding: 0, marginTop: 0 }}>
         {/* Sidebar */}
-        <div style={{ position: "fixed", width: "250px", height: "100%", top: 54, left: 0 }}>
+        <div style={{ position: "fixed", width: "150px", height: "100%", top: 54, left: 0 }}>
           <SidebarImporter />
         </div>
 
@@ -19,7 +19,7 @@ const ImporterLayout = ({ children }) => {
         <main
           style={{
             flex: 1,
-            marginLeft: "250px", // Offset for the sidebar width
+            marginLeft: "200px", // Offset for the sidebar width
             padding: "20px",
             background: "#dbd3f3", // Background color specific for Importer layout
             overflowY: "auto", // Ensures scrolling for overflow content
