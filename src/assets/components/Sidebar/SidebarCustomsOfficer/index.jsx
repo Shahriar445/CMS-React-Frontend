@@ -6,7 +6,7 @@ import {
   DashboardOutlined,
   HistoryOutlined,
   BarChartOutlined,
-  LockOutlined,
+  LockOutlined,FileTextOutlined
 } from "@ant-design/icons";
 import LogoutButton from "../../LoginRegistration/logoutButton";
 
@@ -99,6 +99,22 @@ const SidebarCustomsOfficer = () => {
           }}
         >
           Permission
+        </MenuItem>
+           <MenuItem
+          component={<Link to="/officer/report" />}
+          icon={<FileTextOutlined style={{ iconStyle, color: "Highlight" }} />}
+          style={{
+            color: "black",
+            marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+            transition: "all 0.3s ease",
+          }}
+        >
+          Report
         </MenuItem>
 
         <div

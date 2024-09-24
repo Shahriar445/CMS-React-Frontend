@@ -20,7 +20,7 @@ import AdminUserManage from "../assets/pages/Admin/AdminUserManage";
 import AdminMonitor from "../assets/pages/Admin/AdminMonitor";
 import CustomsOfficerDashboard from "../assets/pages/CustomsOfficer/CustomsOfficerDashboard";
 import CustomsOfficerPayment from "../assets/pages/CustomsOfficer/CustomsOfficerPayment";
-import CustomsOfficerUserPermission from "../assets/pages/CustomsOfficer/CustomsOfficerUserPermission";
+import CustomsOfficerShipmentPermission from "../assets/pages/CustomsOfficer/CustomsOfficerShipmentPermission";
 import CustomsOfficerReport from "../assets/pages/CustomsOfficer/CustomsOfficerReport";
 import CustomsOfficerLayout from "../Layout/CustomsOfficerLayout";
 
@@ -187,7 +187,7 @@ const router = createBrowserRouter([
     element: (
       
       <CustomsOfficerLayout>
-        <CustomsOfficerUserPermission />
+        <CustomsOfficerShipmentPermission />
       </CustomsOfficerLayout>
     
     ),

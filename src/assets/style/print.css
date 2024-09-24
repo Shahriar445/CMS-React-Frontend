@@ -1,0 +1,17 @@
+@media print {
+    body * {
+        display: none;
+        /* Hide everything */
+    }
+
+    #printable-area,
+    #printable-area * {
+        display: block;
+        /* Show only the printable area */
+    }
+
+    #printable-area {
+        display: block;
+        /* Show the printable area */
+    }
+}
