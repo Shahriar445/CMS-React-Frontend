@@ -7,6 +7,7 @@ import {
   FileTextOutlined,
   DollarOutlined,
   MonitorOutlined,
+  CalendarOutlined,
 } from "@ant-design/icons";
 import LogoutButton from "../../LoginRegistration/logoutButton";
 
@@ -53,9 +54,7 @@ const SidebarImporter = () => {
         </MenuItem>
 
         <MenuItem
-          icon={
-            <FileTextOutlined style={{ ...iconStyle, color: "#00CCFF" }} />
-          }
+          icon={<FileTextOutlined style={{ ...iconStyle, color: "#00CCFF" }} />}
           component={<Link to="/importer/declaration" />}
           style={{
             color: "black",
@@ -89,9 +88,7 @@ const SidebarImporter = () => {
         </MenuItem>
 
         <MenuItem
-          icon={
-            <MonitorOutlined style={{ ...iconStyle, color: "#EF634D" }} />
-          }
+          icon={<MonitorOutlined style={{ ...iconStyle, color: "#EF634D" }} />}
           component={<Link to="/importer/monitoring" />}
           style={{
             color: "black",
@@ -105,6 +102,23 @@ const SidebarImporter = () => {
           }}
         >
           Monitor
+        </MenuItem>
+
+        <MenuItem
+          icon={<CalendarOutlined style={{ ...iconStyle, color: "#1677ff" }} />}
+          component={<Link to="/importer/calender" />}
+          style={{
+            color: "black",
+            marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+            transition: "all 0.3s ease",
+          }}
+        >
+          Calender
         </MenuItem>
 
         <div
