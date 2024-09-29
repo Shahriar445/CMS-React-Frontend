@@ -20,7 +20,7 @@ import {
 
 const { Option } = Select;
 
-const DeclarationForm: React.FC = () => {
+const DeclarationFormExporter: React.FC = () => {
   const [form] = Form.useForm();
 
   const [categories, setCategories] = useState<
@@ -274,7 +274,7 @@ const DeclarationForm: React.FC = () => {
 
     try {
       const response = await fetch(
-        "https://localhost:7232/CreateDeclarationImporter",
+        "https://localhost:7232/CreateDeclarationExporter",
         {
           method: "POST",
           headers: {
@@ -629,4 +629,4 @@ const DeclarationForm: React.FC = () => {
   );
 };
 
-export default DeclarationForm;
+export default DeclarationFormExporter;

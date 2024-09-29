@@ -1,9 +1,10 @@
 
-import DeclarationForm from "../../components/Declarations/declarationForm";
+
+import DeclarationFormImporter from "../../components/Declarations/declarationFormImporter";
 const ImporterDeclarations = () => {
   return (
     <div>
-      <DeclarationForm/>
+      <DeclarationFormImporter/>
     </div>
   );
 };
