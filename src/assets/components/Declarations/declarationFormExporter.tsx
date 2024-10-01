@@ -264,7 +264,7 @@ const DeclarationFormExporter: React.FC = () => {
       shipments: [
         {
           methodOfShipment: values.shipmentMethod,
-          portOfDeparture: values.portOfDeparture,
+          portOfDeparture: values.departurePort,
           portOfDestination: values.destinationPort,
           departureDate: new Date().toISOString(),
           arrivalDate: new Date().toISOString(),
