@@ -13,7 +13,6 @@ import ImporterPayment from "../assets/pages/Importer/ImporterPayment.s";
 import ImporterDashboard from "../assets/pages/Importer/ImporterDashboard";
 import ImporterDeclaration from "../assets/pages/Importer/ImporterDeclarations";
 import ImporterLayout from "../Layout/ImporterLayout";
-import ImporterMonitoring from "../assets/pages/Importer/ImporterMonitoring";
 import AdminLayout from "../Layout/AdminLayout";
 import AdminDashboard from "../assets/pages/Admin/AdminDashboard";
 import AdminUserManage from "../assets/pages/Admin/AdminUserManage";
@@ -25,6 +24,10 @@ import CustomsOfficerReport from "../assets/pages/CustomsOfficer/CustomsOfficerR
 import CustomsOfficerLayout from "../Layout/CustomsOfficerLayout";
 import ImporterCalender from "../assets/pages/Importer/ImporterCalender";
 import Guard from "../assets/guard";
+import ExporterList from "../assets/pages/Exporter/ExporterList";
+
+import ImporterMonitoring from "../assets/pages/Importer/ImporterMonitor";
+import Importerlist from "../assets/pages/Importer/Importerlist";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -70,6 +73,14 @@ const router = createBrowserRouter([
       </ExporterLayout>
     ),
   },
+   {
+    path: "/exporter/list",
+    element: (
+      <ExporterLayout>
+        <ExporterList/>
+      </ExporterLayout>
+    ),
+  },
   // ------------------- Importer
   {
     path: "/importer/dashboard",
@@ -102,6 +113,14 @@ const router = createBrowserRouter([
     element: (
       <ImporterLayout>
         <ImporterMonitoring />
+      </ImporterLayout>
+    ),
+  },
+    {
+    path: "/importer/list",
+    element: (
+      <ImporterLayout>
+        <Importerlist />
       </ImporterLayout>
     ),
   },

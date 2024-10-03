@@ -8,6 +8,7 @@ import {
   DollarOutlined,
   MonitorOutlined,
   CalendarOutlined,
+  UnorderedListOutlined
 } from "@ant-design/icons";
 import LogoutButton from "../../LoginRegistration/logoutButton";
 
@@ -102,6 +103,24 @@ const SidebarImporter = () => {
           }}
         >
           Monitor
+        </MenuItem>
+           <MenuItem
+          icon={
+            <UnorderedListOutlined  style={{ ...iconStyle, color: "#FF8C00" }} />
+          }
+          component={<Link to="/importer/list" />}
+          style={{
+            color: "black",
+            marginBottom: "10px",
+            fontSize: "20px",
+            padding: "5px",
+            borderRadius: "5px",
+            border: "1px solid #e0e0e0", 
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
+            transition: "all 0.3s ease", 
+          }}
+        >
+          List Shipment
         </MenuItem>
 
         <MenuItem

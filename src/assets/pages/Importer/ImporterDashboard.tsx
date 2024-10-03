@@ -22,7 +22,7 @@ interface DashboardData {
   totalPendingShipment: number;
 }
 
-const ExporterDashboard: React.FC = () => {
+const ImporterDashboard: React.FC = () => {
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(
     null
   );
@@ -219,4 +219,4 @@ const ExporterDashboard: React.FC = () => {
   );
 };
 
-export default ExporterDashboard;
+export default ImporterDashboard;
