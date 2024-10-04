@@ -28,7 +28,7 @@ const statusColors: { [key: string]: string } = {
   Completed: "green",
 };
 
-const ImporterMonitoring: React.FC = () => {
+const Importerlist: React.FC = () => {
   const [shipmentData, setShipmentData] = useState<ShipmentData[]>([]);
   const [filteredData, setFilteredData] = useState<ShipmentData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -192,4 +192,4 @@ const ImporterMonitoring: React.FC = () => {
   );
 };
 
-export default ImporterMonitoring;
+export default Importerlist;

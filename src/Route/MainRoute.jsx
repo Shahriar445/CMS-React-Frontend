@@ -25,9 +25,10 @@ import CustomsOfficerLayout from "../Layout/CustomsOfficerLayout";
 import ImporterCalender from "../assets/pages/Importer/ImporterCalender";
 import Guard from "../assets/guard";
 import ExporterList from "../assets/pages/Exporter/ExporterList";
-
+import CustomsOfficerMonitor from "../assets/pages/CustomsOfficer/CustomsOfficerMonitor";
 import ImporterMonitoring from "../assets/pages/Importer/ImporterMonitor";
 import Importerlist from "../assets/pages/Importer/Importerlist";
+import AdminAddProduct from "../assets/pages/Admin/AdminAddProduct";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -159,6 +160,13 @@ const router = createBrowserRouter([
         <AdminUserManage />
       </AdminLayout>
     ),
+  },  {
+    path: "/admin/product",
+    element: (
+      <AdminLayout>
+        <AdminAddProduct />
+      </AdminLayout>
+    ),
   },
   //------------------ customs officer
   {
@@ -176,6 +184,14 @@ const router = createBrowserRouter([
     element: (
       <CustomsOfficerLayout>
         <CustomsOfficerPayment />
+      </CustomsOfficerLayout>
+    ),
+  },
+  {
+    path: "/officer/monitor",
+    element: (
+      <CustomsOfficerLayout>
+        <CustomsOfficerMonitor />
       </CustomsOfficerLayout>
     ),
   },

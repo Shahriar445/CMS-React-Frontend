@@ -68,7 +68,7 @@ const SidebarCustomsOfficer = () => {
         </MenuItem>
 
         <MenuItem
-          component={<Link to="/officer/report" />}
+          component={<Link to="/officer/monitor" />}
           icon={<BarChartOutlined style={{ iconStyle, color: "#ef634d" }} />}
           style={{
             color: "black",

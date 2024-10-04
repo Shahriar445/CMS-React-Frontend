@@ -1,10 +1,10 @@
-import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import {  Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import Sider from "antd/es/layout/Sider";
 import {
   DashboardOutlined,
   EyeOutlined,
-  UserOutlined,
+  UserOutlined,ShoppingOutlined 
 } from "@ant-design/icons";
 
 import LogoutButton from "../../LoginRegistration/logoutButton";
@@ -19,7 +19,7 @@ const SidebarAdmin = () => {
           position: "relative",
           top: "0",
           bottom: "0",
-          backgroundColor: "#fff", // Optional: set background color for the sidebar
+          backgroundColor: "#fff", 
         }}
       >
         <Menu
@@ -39,14 +39,14 @@ const SidebarAdmin = () => {
             } // Add the icon here
             component={<Link to="/admin/dashboard" />}
             style={{
-              color: "black", // Light blue text
+              color: "black", 
               marginBottom: "10px",
               fontSize: "20px",
               padding: "5px",
               borderRadius: "5px",
-              border: "1px solid #e0e0e0", // Add border
-              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
-              transition: "all 0.3s ease", // Smooth transition on hover
+              border: "1px solid #e0e0e0", 
+              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
+              transition: "all 0.3s ease", 
             }}
           >
             Dashboard
@@ -59,9 +59,9 @@ const SidebarAdmin = () => {
               marginBottom: "10px",
               padding: "5px",
               borderRadius: "5px",
-              border: "1px solid #e0e0e0", // Add border
-              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
-              transition: "all 0.3s ease", // Smooth transition on hover
+              border: "1px solid #e0e0e0", 
+              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
+              transition: "all 0.3s ease", 
             }}
             icon={<EyeOutlined style={{ iconStyle, color: "#2196F3" }} />}
             component={<Link to="/admin/monitor" />}
@@ -75,14 +75,31 @@ const SidebarAdmin = () => {
               color: "black",
               padding: "5px",
               borderRadius: "5px",
-              border: "1px solid #e0e0e0", // Add border
-              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Add shadow
-              transition: "all 0.3s ease", // Smooth transition on hover
+              border: "1px solid #e0e0e0", 
+              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
+              transition: "all 0.3s ease", 
             }}
             icon={<UserOutlined style={{ color: "#02daa3" }} />}
             component={<Link to="/admin/usermanage" />}
           >
             User Manage
+          </MenuItem>
+
+            <MenuItem
+            style={{
+              fontSize: "20px",
+              color: "black",
+              marginTop:'10px',
+              padding: "5px",
+              borderRadius: "5px",
+              border: "1px solid #e0e0e0", 
+              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
+              transition: "all 0.3s ease", 
+            }}
+            icon={<ShoppingOutlined  style={{ color: "#6967a4" }} />}
+            component={<Link to="/admin/product" />}
+          >
+             Product Manage
           </MenuItem>
           <div
             style={{
