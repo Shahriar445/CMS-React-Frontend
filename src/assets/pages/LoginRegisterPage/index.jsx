@@ -9,16 +9,18 @@ const LoginPage = () => {
   return (
     <div>
       <Card
+        className=" "
         headStyle={{
-          backgroundColor: "#f0f2f5",
+          backgroundColor: "",
           textAlign: "center",
-          borderRadius: "8px",
+          borderRadius: "8px", 
         }}
         title="Customs Management System"
         style={{
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           borderRadius: "8px",
           width: "400px",
+          
         }}
       >
         <div
