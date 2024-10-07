@@ -32,8 +32,12 @@ const ImporterMonitoring: React.FC = () => {
   const fetchMonitoringOverview = async () => {
     setLoading(true);
     try {
+      const userId = localStorage.getItem("userId");
+      if (!userId) {
+        throw new Error("User Id not found in local stroage");
+      }
       const response = await fetch(
-        "https://localhost:7232/Importer-monitoring"
+        `https://localhost:7232/monitoring/${userId}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch monitoring overview");

@@ -37,7 +37,7 @@ const ExporterMonitoring: React.FC = () => {
         throw new Error("User Id not found in local stroage");
       }
       const response = await fetch(
-        `https://localhost:7232/Exporter-monitoring/${userId}`
+        `https://localhost:7232/monitoring/${userId}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch monitoring overview");
