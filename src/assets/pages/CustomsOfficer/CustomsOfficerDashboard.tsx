@@ -300,7 +300,7 @@ const CustomsOfficerDashboard: React.FC = () => {
         </Card>
 
         {/* Chart Section */}
-        <Card>
+        <Card className="p-5 bg-gray-100 rounded shadow-md">
           <Row>
             <BarChart width={600} height={300} data={chartData}>
               <XAxis dataKey="name" />

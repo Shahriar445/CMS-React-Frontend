@@ -191,7 +191,8 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
   const showConfirm = (shipmentId: string) => {
     confirm({
       title: "Are you sure you want to complete this shipment?",
-      content: "This action will move the Completed shipment.",
+      content:
+        "This action will move the Completed shipment. Also Send a Email to Collect their product",
       okText: "Yes",
       cancelText: "No",
       onOk: () => completedShipment(shipmentId),
@@ -270,7 +271,9 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
         onChange={handleSearch}
         style={{
           marginBottom: "20px",
-          width: "20%",
+          width: "30%", // Increased width for better visibility
+          borderRadius: "5px", // Added border radius for a smoother look
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
         }}
         prefix={<SearchOutlined />}
       />
@@ -278,11 +281,7 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
         <TabPane
           tab="Pending Shipments"
           key="1"
-          style={{
-            padding: "20px",
-            background: "#f9f9f9",
-            borderRadius: "4px",
-          }}
+          className="p-5 bg-gray-100 rounded shadow-md" // Tailwind classes
         >
           <Table
             columns={[
@@ -348,7 +347,11 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
             scroll={{ x: true }}
           />
         </TabPane>
-        <TabPane tab="Running Shipments" key="2" style={tabPaneStyle}>
+        <TabPane
+          tab="Running Shipments"
+          key="2"
+          className="p-5 bg-gray-100 rounded shadow-md" // Tailwind classes
+        >
           <Table
             dataSource={filterShipments(
               runningShipments.map((shipment) => ({
@@ -383,7 +386,11 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
             scroll={{ x: true }}
           />
         </TabPane>
-        <TabPane tab={<span style={{}}>Complete Shipments</span>} key="3">
+        <TabPane
+          tab={<span style={{}}>Complete Shipments</span>}
+          key="3"
+          className="p-5 bg-gray-100 rounded shadow-md" // Tailwind classes
+        >
           <Table
             dataSource={filterShipments(completeShipments)}
             columns={commonColumns}
@@ -392,7 +399,11 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
             scroll={{ x: true }}
           />
         </TabPane>
-        <TabPane tab="Rejected Shipments" style={tabPaneStyle} key="4">
+        <TabPane
+          tab="Rejected Shipments"
+          key="4"
+          className="p-5 bg-gray-100 rounded shadow-md" //
+        >
           <Table
             dataSource={filterShipments(rejectedShipments)} // Filtered data
             columns={[

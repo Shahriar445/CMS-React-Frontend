@@ -54,6 +54,7 @@ const ImporterCalender: React.FC = () => {
 
   return (
     <div
+      className="p-5 bg-gray-100 rounded shadow-md"
       style={{
         backgroundColor: "#f9f9f9",
         padding: "20px",

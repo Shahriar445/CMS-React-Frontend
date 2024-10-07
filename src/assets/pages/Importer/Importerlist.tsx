@@ -162,7 +162,7 @@ const Importerlist: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className="p-2 bg-gray-100 rounded shadow-md">
       <main>
         <div className="monitoring-section">
           <Title level={2}>Track Your Shipments</Title>
