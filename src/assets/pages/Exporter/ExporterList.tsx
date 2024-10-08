@@ -73,10 +73,14 @@ const ExporterList: React.FC = () => {
   const handleSearch = (value: string) => {
     const filtered = shipmentData.filter(
       (item) =>
-        item.productName.toLowerCase().includes(value.toLowerCase()) ||
-        item.status.toLowerCase().includes(value.toLowerCase()) ||
-        item.portOfDeparture.toLowerCase().includes(value.toLowerCase()) ||
-        item.portOfDestination.toLowerCase().includes(value.toLowerCase())
+        (item.productName?.toLowerCase() || "").includes(value.toLowerCase()) ||
+        (item.status?.toLowerCase() || "").includes(value.toLowerCase()) ||
+        (item.portOfDeparture?.toLowerCase() || "").includes(
+          value.toLowerCase()
+        ) ||
+        (item.portOfDestination?.toLowerCase() || "").includes(
+          value.toLowerCase()
+        )
     );
     setFilteredData(filtered);
   };

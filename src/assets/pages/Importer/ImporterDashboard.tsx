@@ -108,7 +108,7 @@ const ImporterDashboard: React.FC = () => {
       <Row gutter={16}>
         <Col span={8}>
           <Card
-            style={{ backgroundColor: "#f0f9ff", borderColor: "#91d5ff" }}
+            style={{ backgroundColor: "#f0f6ff", borderColor: "#91d5ff" }}
             bordered={false}
           >
             <Statistic

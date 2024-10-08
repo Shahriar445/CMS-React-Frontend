@@ -1,11 +1,11 @@
 import React from "react";
 import { Tabs } from "antd";
 import PaymentComponent from "../../components/Payment/PaymentComponent";
-import InvoiceSection from "../../components/Invoices/InvoiceComponent"; // Assuming this is the invoice component you already created
+import InvoiceSection from "../../components/Invoices/InvoiceComponent"; // Make sure this is the correct path for your InvoiceComponent
 
 const { TabPane } = Tabs;
 
-const ImporterPayment: React.FC = () => {
+const ExporterPayment: React.FC = () => {
   return (
     <div className="p-8 bg-gray-100 rounded-lg shadow-lg">
       <Tabs defaultActiveKey="1" centered>
@@ -24,4 +24,4 @@ const ImporterPayment: React.FC = () => {
   );
 };
 
-export default ImporterPayment;
+export default ExporterPayment;

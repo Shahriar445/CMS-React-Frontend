@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Layout, Typography, Table, Button, Tag, message } from 'antd';
+import  { useEffect, useState } from 'react';
+import { Layout, Typography, Table, Button, Tag, message,Tabs } from 'antd';
+import { UserAddOutlined, UsergroupAddOutlined } from '@ant-design/icons';
+const { TabPane } = Tabs;
 
 const { Title } = Typography;
 
@@ -187,19 +189,42 @@ const UserManagement = () => {
     ];
 
     return (
-        <Layout style={{ padding: '0px' }}>
-            <Title style={{ textAlign: 'center' }} level={2}>User Management</Title>
+       <Layout className="p-0">
+      <Title className="text-center text-green-600" level={2}>
+        <UserAddOutlined className="mr-2" />
+        User Management
+      </Title>
 
-            <section className="pending-users">
-                <Title level={3}>Pending User Registrations</Title>
-                <Table columns={pendingColumns} dataSource={pendingUsers} rowKey="userId" />
-            </section>
+      <Tabs defaultActiveKey="1" >
+        <TabPane
+          tab={
+            <span>
+              <UsergroupAddOutlined className="mr-2" />
+              Pending User Registrations
+            </span>
+          }
+          key="1"
+        >
+          <section className="pending-users p-4 border border-gray-300 rounded-lg shadow-md my-6 bg-gray-50">
+            <Table columns={pendingColumns} dataSource={pendingUsers} rowKey="userId" />
+          </section>
+        </TabPane>
 
-            <section className="active-users" style={{ marginTop: '20px' }}>
-                <Title level={3}>Active Users</Title>
-                <Table columns={activeColumns} dataSource={activeUsers} rowKey="userId" />
-            </section>
-        </Layout>
+        <TabPane
+          tab={
+            <span>
+              <UsergroupAddOutlined className="mr-2" />
+              Active Users
+            </span>
+          }
+          key="2"
+        >
+          <section className="active-users p-4 border border-gray-300 rounded-lg shadow-md my-6 bg-gray-50">
+            <Table columns={activeColumns} dataSource={activeUsers} rowKey="userId" />
+          </section>
+        </TabPane>
+      </Tabs>
+    </Layout>
     );
 };
 

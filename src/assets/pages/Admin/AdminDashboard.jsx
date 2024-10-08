@@ -58,70 +58,58 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div style={{ width: '100%', padding: '0px' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '24px' }}>Admin Dashboard</h1>
-      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
-        
-        {/* Card for Total Exporters */}
-        <Card
-          title={<><UserAddOutlined /> Total Exporters</>}
-          bordered={false}
-          style={{ ...cardStyle, backgroundColor: '#1890ff', color: 'white' }}
-        >
-          <Text style={textStyle}>{data.totalExporters}</Text>
-        </Card>
+    <div className="w-full p-0">
+  <h1 className="text-center mb-6 text-2xl font-bold">Admin Dashboard</h1>
+  <div className="flex gap-5 flex-wrap justify-center">
+    
+    {/* Card for Total Exporters */}
+    <Card
+      title={<><UserAddOutlined /> Total Exporters</>}
+      bordered={false}
+      className="bg-blue-600 text-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105"
+    >
+      <Text className="text-lg font-semibold">{data.totalExporters}</Text>
+    </Card>
 
-        {/* Card for Total Importers */}
-        <Card
-          title={<><UsergroupAddOutlined /> Total Importers</>}
-          bordered={false}
-          style={{ ...cardStyle, backgroundColor: '#52c41a', color: 'white' }}
-        >
-          <Text style={textStyle}>{data.totalImporters}</Text>
-        </Card>
+    {/* Card for Total Importers */}
+    <Card
+      title={<><UsergroupAddOutlined /> Total Importers</>}
+      bordered={false}
+      className="bg-green-500 text-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105"
+    >
+      <Text className="text-lg font-semibold">{data.totalImporters}</Text>
+    </Card>
 
-        {/* Card for Total Customs Officers */}
-        <Card
-          title={<><UserSwitchOutlined /> Total Customs Officers</>}
-          bordered={false}
-          style={{ ...cardStyle, backgroundColor: '#faad14', color: 'white' }}
-        >
-          <Text style={textStyle}>{data.totalCustomsOfficers}</Text>
-        </Card>
+    {/* Card for Total Customs Officers */}
+    <Card
+      title={<><UserSwitchOutlined /> Total Customs Officers</>}
+      bordered={false}
+      className="bg-yellow-500 text-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105"
+    >
+      <Text className="text-lg font-semibold">{data.totalCustomsOfficers}</Text>
+    </Card>
 
-        {/* Card for Pending Approvals */}
-        <Card
-          title={<><ClockCircleOutlined /> Pending Approvals</>}
-          bordered={false}
-          style={{ ...cardStyle, backgroundColor: '#fa541c', color: 'white' }}
-        >
-          <Text style={textStyle}>{data.pendingApprovals}</Text>
-        </Card>
+    {/* Card for Pending Approvals */}
+    <Card
+      title={<><ClockCircleOutlined /> Pending Approvals</>}
+      bordered={false}
+      className="bg-red-600 text-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105"
+    >
+      <Text className="text-lg font-semibold">{data.pendingApprovals}</Text>
+    </Card>
 
-        {/* Card for Active Users */}
-        <Card
-          title={<><UserOutlined /> Active Users</>}
-          bordered={false}
-          style={{ ...cardStyle, backgroundColor: '#722ed1', color: 'white' }}
-        >
-          <Text style={textStyle}>{data.activeUsers}</Text>
-        </Card>
-      </div>
-    </div>
+    {/* Card for Active Users */}
+    <Card
+      title={<><UserOutlined /> Active Users</>}
+      bordered={false}
+      className="bg-purple-600 text-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105"
+    >
+      <Text className="text-lg font-semibold">{data.activeUsers}</Text>
+    </Card>
+  </div>
+</div>
+
   );
-};
-
-// Styles for card and text to keep them consistent
-const cardStyle = {
-  width: 300,
-  textAlign: 'center',
-  borderRadius: '8px',
-  boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-};
-
-const textStyle = {
-  fontSize: '24px',
-  fontWeight: 'bold',
 };
 
 export default AdminDashboard;

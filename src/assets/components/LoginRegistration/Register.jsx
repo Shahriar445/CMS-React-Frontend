@@ -30,7 +30,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div style={{marginTop:'-20px'}}>
       <Form
         form={form}
         onFinish={handleSubmit}
@@ -81,7 +81,7 @@ const Register = () => {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button style={{width:'100%'}} type="primary" htmlType="submit">
             Register
           </Button>
         </Form.Item>

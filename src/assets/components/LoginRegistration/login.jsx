@@ -62,13 +62,13 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div style={{height:'204px', width:'250px'}}>
       <Form onFinish={handleSubmit} initialValues={{ role }}>
         <Form.Item
           label="Username"
           style={{ marginBottom: "8px" }}
           name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}
+          rules={[{ required: true, message: "Please input your username or email!" }]}
         >
           <Input
             style={{ height: "35px" }}
@@ -108,7 +108,7 @@ const Login = () => {
           </Select>
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button style={{ width:"100%"}} type="primary" htmlType="submit">
             Login
           </Button>
         </Form.Item>

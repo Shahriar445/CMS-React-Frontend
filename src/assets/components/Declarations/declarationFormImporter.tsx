@@ -10,6 +10,7 @@ import {
   Col,
   Card,
 } from "antd";
+import moment from "moment";
 import { Modal } from "antd";
 
 import {
@@ -310,13 +311,12 @@ const DeclarationFormImporter: React.FC = () => {
   };
 
   return (
-    <Card>
+    <Card title="Declaration Form" style={{ marginTop: "5px" }}>
       <main className="form-container">
         <div className="form-section">
-          <h2>Declaration Form</h2>
           <Form form={form} onFinish={onFinish} id="customs-form">
-            <Row gutter={16}>
-              <Col span={12}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
                 <Form.Item
                   label="Category of products:"
                   name="productsCategory"
@@ -339,8 +339,8 @@ const DeclarationFormImporter: React.FC = () => {
                     ))}
                   </Select>
                 </Form.Item>
-              </Col>
-              <Col span={12}>
+              </div>
+              <div>
                 <Form.Item
                   label="Product Name:"
                   name="productsName"
@@ -360,11 +360,9 @@ const DeclarationFormImporter: React.FC = () => {
                     ))}
                   </Select>
                 </Form.Item>
-              </Col>
-            </Row>
+              </div>
 
-            <Row gutter={16}>
-              <Col span={12}>
+              <div>
                 <Form.Item
                   label="Quantity:"
                   name="productsQuantity"
@@ -407,8 +405,8 @@ const DeclarationFormImporter: React.FC = () => {
                     />
                   )}
                 </Form.Item>
-              </Col>
-              <Col span={12}>
+              </div>
+              <div>
                 <Form.Item
                   label="Weight:"
                   name="weight"
@@ -455,11 +453,8 @@ const DeclarationFormImporter: React.FC = () => {
                     />
                   )}
                 </Form.Item>
-              </Col>
-            </Row>
-
-            <Row gutter={16}>
-              <Col span={12}>
+              </div>
+              <div>
                 <Form.Item label="Price:" name="productPrice">
                   <Input
                     value={selectedProduct?.price || 0}
@@ -468,8 +463,8 @@ const DeclarationFormImporter: React.FC = () => {
                     prefix={<DollarOutlined />}
                   />
                 </Form.Item>
-              </Col>
-              <Col span={12}>
+              </div>
+              <div>
                 <Form.Item
                   label="Shipment Method:"
                   name="shipmentMethod"
@@ -486,11 +481,9 @@ const DeclarationFormImporter: React.FC = () => {
                     <Option value="land">Land</Option>
                   </Select>
                 </Form.Item>
-              </Col>
-            </Row>
+              </div>
 
-            <Row gutter={16}>
-              <Col span={12}>
+              <div>
                 <Form.Item
                   label="Country of Origin:"
                   name="countryOrigin"
@@ -510,8 +503,8 @@ const DeclarationFormImporter: React.FC = () => {
                     ))}
                   </Select>
                 </Form.Item>
-              </Col>
-              <Col span={12}>
+              </div>
+              <div>
                 <Form.Item
                   label="Port of Departure:"
                   name="departurePort"
@@ -525,11 +518,9 @@ const DeclarationFormImporter: React.FC = () => {
                     ))}
                   </Select>
                 </Form.Item>
-              </Col>
-            </Row>
+              </div>
 
-            <Row gutter={16}>
-              <Col span={12}>
+              <div>
                 <Form.Item
                   label="Port of Destination:"
                   name="destinationPort"
@@ -547,8 +538,8 @@ const DeclarationFormImporter: React.FC = () => {
                     ))}
                   </Select>
                 </Form.Item>
-              </Col>
-              <Col span={12}>
+              </div>
+              <div>
                 <Form.Item
                   label="Expected Departure Date:"
                   name="expectedDeparture"
@@ -557,29 +548,75 @@ const DeclarationFormImporter: React.FC = () => {
                       required: true,
                       message: "Please select a departure date!",
                     },
+                    {
+                      validator: (_, value) => {
+                        if (!value) {
+                          return Promise.resolve();
+                        }
+                        const today = moment().startOf("day");
+                        if (value.isBefore(today)) {
+                          return Promise.reject(
+                            new Error("Departure date cannot be in the past!")
+                          );
+                        }
+                        return Promise.resolve();
+                      },
+                    },
                   ]}
                 >
-                  <DatePicker style={{ height: 28, width: "100%" }} />
+                  <DatePicker
+                    style={{ height: 28, width: "100%" }}
+                    onChange={(date) =>
+                      form.setFieldsValue({ expectedDeparture: date })
+                    }
+                  />
                 </Form.Item>
-              </Col>
-            </Row>
+              </div>
 
-            <Row gutter={12}>
-              <Col span={12}>
+              <div>
                 <Form.Item
                   label="Expected Arrival Date:"
                   name="expectedArrival"
+                  dependencies={["expectedDeparture"]}
                   rules={[
                     {
                       required: true,
                       message: "Please select an arrival date!",
                     },
+                    {
+                      validator: (_, value) => {
+                        const departureDate =
+                          form.getFieldValue("expectedDeparture");
+                        if (!value || !departureDate) {
+                          return Promise.resolve();
+                        }
+                        const today = moment().startOf("day");
+                        if (value.isBefore(today)) {
+                          return Promise.reject(
+                            new Error("Arrival date cannot be in the past!")
+                          );
+                        }
+                        if (value.isBefore(departureDate)) {
+                          return Promise.reject(
+                            new Error(
+                              "Arrival date cannot be earlier than departure date!"
+                            )
+                          );
+                        }
+                        return Promise.resolve();
+                      },
+                    },
                   ]}
                 >
-                  <DatePicker style={{ height: 28, width: "100%" }} />
+                  <DatePicker
+                    style={{ height: 28, width: "100%" }}
+                    onChange={(date) =>
+                      form.setFieldsValue({ expectedArrival: date })
+                    }
+                  />
                 </Form.Item>
-              </Col>
-              <Col span={12}>
+              </div>
+              <div>
                 <Form.Item label="Total Price:" name="totalPrice">
                   <Input
                     value={totalPrice ? totalPrice.toFixed(2) : 0}
@@ -588,13 +625,11 @@ const DeclarationFormImporter: React.FC = () => {
                     prefix={<DollarOutlined />}
                   />
                 </Form.Item>
-              </Col>
-            </Row>
+              </div>
 
-            <fieldset>
-              <legend>Price Details</legend>
-              <Row gutter={12}>
-                <Col span={12}>
+              <fieldset>
+                <legend>Price Details</legend>
+                <div>
                   <Form.Item label="VAT:" name="vat">
                     <Input
                       value={form.getFieldValue("vat")}
@@ -603,8 +638,8 @@ const DeclarationFormImporter: React.FC = () => {
                       prefix={<DollarOutlined />}
                     />
                   </Form.Item>
-                </Col>
-                <Col span={12}>
+                </div>
+                <div>
                   <Form.Item label="Tax:" name="tax">
                     <Input
                       value={form.getFieldValue("tax")}
@@ -613,15 +648,20 @@ const DeclarationFormImporter: React.FC = () => {
                       prefix={<DollarOutlined />}
                     />
                   </Form.Item>
-                </Col>
-              </Row>
-            </fieldset>
-
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Submit Declaration
-              </Button>
-            </Form.Item>
+                </div>
+              </fieldset>
+            </div>
+            <div className="mt-6">
+              <Form.Item>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg"
+                >
+                  Submit Declaration
+                </Button>
+              </Form.Item>
+            </div>
           </Form>
         </div>
       </main>

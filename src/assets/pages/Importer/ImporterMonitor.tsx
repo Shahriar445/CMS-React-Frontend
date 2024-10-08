@@ -14,6 +14,7 @@ import {
   CheckCircleOutlined,
   SyncOutlined,
   BarChartOutlined,
+  MailOutlined,
 } from "@ant-design/icons";
 import "../../style/exporter.css";
 
@@ -104,7 +105,14 @@ const ImporterMonitoring: React.FC = () => {
           className="p-0 bg-gray-100 rounded shadow-md"
           defaultActiveKey="1"
         >
-          <TabPane tab="Overview" key="1">
+          <TabPane
+            tab={
+              <div className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition duration-300 ease-in-out rounded-md">
+                Overview
+              </div>
+            }
+            key="1"
+          >
             <Row gutter={[16, 16]}>
               <Col span={8}>
                 <Card className="animated-card processed-card">
@@ -180,17 +188,38 @@ const ImporterMonitoring: React.FC = () => {
             </Button>
           </TabPane>
 
-          <TabPane tab="Email Notifications" key="2">
-            <Card style={{ marginTop: "16px" }}>
+          <TabPane
+            tab={
+              <div className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition duration-300 ease-in-out rounded-md">
+                Email Notifications
+              </div>
+            }
+            key="2"
+          >
+            <Card className="mt-4 p-4 bg-white shadow-lg rounded-lg">
               {emails.length === 0 ? (
                 <Text>No email notifications available.</Text>
               ) : (
                 emails.map((email) => (
-                  <Card key={email.id} style={{ marginBottom: "16px" }}>
-                    <Title level={4}>{email.subject}</Title>
-                    <Text>{sanitizeHtml(email.body)}</Text>
+                  <Card
+                    key={email.id}
+                    className="mb-4 p-4 bg-gray-100 shadow-md rounded-lg"
+                  >
+                    <div className="flex items-center">
+                      <MailOutlined className="text-blue-500 mr-2" />{" "}
+                      {/* Icon with custom color */}
+                      <Title
+                        level={4}
+                        className="text-lg font-semibold text-gray-900"
+                      >
+                        {email.subject}
+                      </Title>
+                    </div>
+                    <Text className="text-gray-700">
+                      {sanitizeHtml(email.body)}
+                    </Text>
                     <br />
-                    <Text type="secondary">
+                    <Text type="secondary" className="text-gray-500">
                       {email.sentAt
                         ? new Date(email.sentAt).toLocaleString("en-BD", {
                             timeZone: "Asia/Dhaka",
