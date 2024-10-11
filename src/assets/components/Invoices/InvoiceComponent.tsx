@@ -40,7 +40,6 @@ const InvoiceSection: React.FC = () => {
     }
   }, []);
 
-  // Columns for the Ant Design Table
   const columns = [
     {
       title: "Invoice ID",

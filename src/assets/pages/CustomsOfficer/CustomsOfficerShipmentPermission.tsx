@@ -22,6 +22,7 @@ interface Shipment {
   userRole?: string;
   declarationStatus?: string;
   shipmentStatus?: string;
+  completedDate?: string;
 }
 
 const CustomsOfficerShipmentPermission: React.FC = () => {
@@ -222,12 +223,7 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
       key: "declarationId",
       width: "120px",
     },
-    {
-      title: "Method of Shipment",
-      dataIndex: "methodOfShipment",
-      key: "methodOfShipment",
-      width: "150px",
-    },
+
     {
       title: "Port of Departure",
       dataIndex: "portOfDeparture",
@@ -241,13 +237,6 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
       width: "150px",
     },
     {
-      title: "Departure Date",
-      dataIndex: "departureDate",
-      key: "departureDate",
-      width: "130px",
-      render: (date: string) => new Date(date).toLocaleDateString(),
-    },
-    {
       title: "Arrival Date",
       dataIndex: "arrivalDate",
       key: "arrivalDate",
@@ -255,11 +244,40 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
       render: (date: string) => new Date(date).toLocaleDateString(),
     },
     {
+      title: "Departure Date",
+      dataIndex: "departureDate",
+      key: "departureDate",
+      width: "130px",
+      render: (date: string) => new Date(date).toLocaleDateString(),
+    },
+
+    {
       title: "Payment Status",
       dataIndex: "paymentStatus",
       key: "paymentStatus",
       render: (status: string) => (
         <Tag color={status === "Completed" ? "green" : "red"}>{status}</Tag>
+      ),
+    },
+    {
+      title: "Shipment Status",
+      dataIndex: "shipmentStatus",
+      key: "shipmentStatus",
+      width: "120px",
+      render: (status: string) => (
+        <Tag
+          color={
+            status === "Completed"
+              ? "green"
+              : status === "Approved"
+              ? "yellow"
+              : status === "Pending"
+              ? "#a83632"
+              : "red"
+          }
+        >
+          {status}
+        </Tag>
       ),
     },
   ];
@@ -324,14 +342,14 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
                       onClick={() => approveShipment(record.shipmentId)}
                       disabled={record.paymentStatus !== "Completed"}
                       icon={<CheckCircleOutlined />}
-                      style={{ width: "60%" }}
+                      style={{ width: "100%" }}
                     >
                       Approve
                     </Button>
                     <Button
                       type="primary"
                       danger
-                      style={{ marginTop: "2px", width: "60%" }}
+                      style={{ marginTop: "2px", width: "100%" }}
                       onClick={() => rejectShipment(record.shipmentId)}
                       icon={<CloseCircleOutlined />}
                     >
@@ -367,6 +385,7 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
                 key: "runningTime",
                 width: "120px",
               },
+
               {
                 title: "Actions",
                 key: "actions",
@@ -393,7 +412,32 @@ const CustomsOfficerShipmentPermission: React.FC = () => {
         >
           <Table
             dataSource={filterShipments(completeShipments)}
-            columns={commonColumns}
+            columns={[
+              ...commonColumns,
+              {
+                title: "Completed Date",
+                dataIndex: "completedDate",
+                key: "completedDate",
+                render: (completedDate: string | null, record) => {
+                  const departureDate = new Date(record.departureDate);
+                  const formattedCompletedDate = completedDate
+                    ? new Date(completedDate).toLocaleDateString()
+                    : "N/A";
+
+                  if (!completedDate) {
+                    return "N/A";
+                  }
+
+                  const isLate = new Date(completedDate) > departureDate;
+
+                  return (
+                    <Tag color={isLate ? "red" : "green"}>
+                      {formattedCompletedDate}
+                    </Tag>
+                  );
+                },
+              },
+            ]}
             rowKey="shipmentId"
             pagination={false}
             scroll={{ x: true }}
