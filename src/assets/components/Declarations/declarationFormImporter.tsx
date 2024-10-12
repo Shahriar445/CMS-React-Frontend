@@ -267,8 +267,13 @@ const DeclarationFormImporter: React.FC = () => {
           methodOfShipment: values.shipmentMethod,
           portOfDeparture: values.departurePort,
           portOfDestination: values.destinationPort,
-          departureDate: new Date().toISOString(),
-          arrivalDate: new Date().toISOString(),
+          DepartureDate: values.expectedDeparture
+            ? values.expectedDeparture.toISOString()
+            : null,
+
+          ArrivalDate: values.expectedArrival
+            ? values.expectedArrival.toISOString()
+            : null,
         },
       ],
     };
