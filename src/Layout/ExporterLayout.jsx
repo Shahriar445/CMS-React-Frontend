@@ -16,12 +16,14 @@ const ExporterLayout = ({ children }) => {
             flex: 1,
             marginLeft: "200px",
             padding: "0px",
+            
             backgroundColor: "#fff",
             borderRadius: "8px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             height: "calc(100vh - 54px)",
-            marginTop: "54px",
+            marginTop: "80px",
             overflowY: "auto",
+            
           }}
         >
           {children}

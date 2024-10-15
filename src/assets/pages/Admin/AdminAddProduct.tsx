@@ -16,6 +16,7 @@ import {
   CheckOutlined,
   ShopOutlined,
   UnorderedListOutlined,
+  ShoppingOutlined,
 } from "@ant-design/icons";
 const { Option } = Select;
 const { TabPane } = Tabs;
@@ -210,11 +211,23 @@ const AdminProductManagement = () => {
 
   return (
     <div style={{ padding: "24px", maxWidth: "800px", margin: "0 auto" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "24px" }}>
+      <h2
+        className="text-3xl font-bold text-white bg-blue-500 p-4 rounded-md flex items-center justify-center shadow-lg"
+        style={{ marginBottom: "24px" }}
+      >
+        <ShoppingOutlined className="mr-2" /> {/* Icon added */}
         Product Management
       </h2>
 
-      <Tabs defaultActiveKey="1" style={{ backgroundColor: "#f9f9f9" }}>
+      <Tabs
+        defaultActiveKey="1"
+        style={{
+          backgroundColor: "#f9f9f9", // Background color for Tabs container
+          borderRadius: "8px", // Smooth corners
+          padding: "20px", // Add padding
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)", // Slight shadow for depth
+        }}
+      >
         <TabPane
           tab={
             <span>

@@ -14,14 +14,13 @@ const iconStyle = { fontSize: "24px" };
 
 const SidebarExporter = () => {
   return (
-    <Sider
+    <Sider className="bg-gray-200"
       style={{
         width: "200px",
         minHeight: "calc(100vh - 120px)",
         position: "relative",
         top: "0",
         bottom: "0",
-        backgroundColor: "#fff", // Sidebar background color
       }}
     >
       <Menu

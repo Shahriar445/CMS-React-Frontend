@@ -37,7 +37,8 @@ const AdminMonitor = () => {
 
   return (
     <>
-      <h1 style={{ textAlign: 'center' }}>Admin Monitor</h1>
+      <h1 className="text-3xl font-bold  p-4 rounded-md flex items-center justify-center shadow-lg"
+        style={{ marginBottom: "24px" }}> MONITOR</h1>
       <Row gutter={16}>
         <Col span={24}>
           <Card title="User Activity" bordered={false}>
@@ -52,7 +53,6 @@ const AdminMonitor = () => {
 // Define colors for different bars
 const colors = ['#4096ff', '#ff4d4f', '#36cfc9', '#ffa940', '#a0d911', '#9254de'];
 
-// Bar Chart component with different colors and shapes
 const BarChartComponent = ({ data }) => {
   return (
     <BarChart width={600} height={300} data={data}>

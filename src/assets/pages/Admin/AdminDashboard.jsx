@@ -58,9 +58,10 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div className="w-full p-0">
-  <h1 className="text-center mb-6 text-2xl font-bold">Admin Dashboard</h1>
-  <div className="flex gap-5 flex-wrap justify-center">
+    <div className="pending-users p-4 border border-gray-300 rounded-lg shadow-md my-6 bg-gray-50">
+  <h1 className="text-3xl font-bold  p-4 rounded-md flex items-center justify-center shadow-lg"
+        style={{ marginBottom: "24px" }}> Dashboard</h1>
+  <div className="flex gap-5 flex-wrap justify-center mt-8">
     
     {/* Card for Total Exporters */}
     <Card

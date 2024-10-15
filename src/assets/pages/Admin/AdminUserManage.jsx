@@ -190,40 +190,44 @@ const UserManagement = () => {
 
     return (
        <Layout className="p-0">
-      <Title className="text-center text-green-600" level={2}>
+      <Title className="text-3xl font-bold  p-4  text-green-600 rounded-md flex items-center justify-center shadow-lg"
+        style={{ marginBottom: "24px" }} level={2}>
         <UserAddOutlined className="mr-2" />
         User Management
       </Title>
 
-      <Tabs defaultActiveKey="1" >
-        <TabPane
-          tab={
-            <span>
-              <UsergroupAddOutlined className="mr-2" />
-              Pending User Registrations
-            </span>
-          }
-          key="1"
-        >
-          <section className="pending-users p-4 border border-gray-300 rounded-lg shadow-md my-6 bg-gray-50">
-            <Table columns={pendingColumns} dataSource={pendingUsers} rowKey="userId" />
-          </section>
-        </TabPane>
+    <Tabs
+  defaultActiveKey="1"
+  className="bg-white shadow-lg rounded-lg p-4" // Tailwind styling for Tabs container
+>
+  <TabPane
+    tab={
+      <span className="text-blue-600"> 
+        <UsergroupAddOutlined className="mr-2 text-lg" />
+        Pending User Registrations
+      </span>
+    }
+    key="1"
+  >
+    <section className="pending-users p-4 border border-gray-300 rounded-lg shadow-md my-6 bg-gray-50">
+      <Table columns={pendingColumns} dataSource={pendingUsers} rowKey="userId" />
+    </section>
+  </TabPane>
 
-        <TabPane
-          tab={
-            <span>
-              <UsergroupAddOutlined className="mr-2" />
-              Active Users
-            </span>
-          }
-          key="2"
-        >
-          <section className="active-users p-4 border border-gray-300 rounded-lg shadow-md my-6 bg-gray-50">
-            <Table columns={activeColumns} dataSource={activeUsers} rowKey="userId" />
-          </section>
-        </TabPane>
-      </Tabs>
+  <TabPane
+    tab={
+      <span className="text-green-600"> 
+        <UsergroupAddOutlined className="mr-2 text-lg" /> 
+        Active Users
+      </span>
+    }
+    key="2"
+  >
+    <section className="active-users p-4 border border-gray-300 rounded-lg shadow-md my-6 bg-gray-50">
+      <Table columns={activeColumns} dataSource={activeUsers} rowKey="userId" />
+    </section>
+  </TabPane>
+</Tabs>
     </Layout>
     );
 };
